@@ -1,19 +1,20 @@
-const loadAiTools = async() =>{
+const loadAiTools = async(limit) =>{
     const url = `https://openapi.programming-hero.com/api/ai/tools`;
     const res = await fetch(url);
     const data = await res.json();
-    displayAiTools(data.data.tools);
+    displayAiTools(data.data.tools,limit);
 }
 
-const displayAiTools = (tools) =>{
+const displayAiTools = (tools,limit) =>{
     const AiToolContainer = document.getElementById('AiTool-container');
-    
-    if(tools.length > 6 ){
+    AiToolContainer.innerText = " ";
+    const showMore =  document.getElementById('show-more'); 
+    if(limit && tools.length > 6){
         tools = tools.slice(0,6);
-        document.getElementById('show-more').classList.remove('d-none')
+       showMore.classList.remove('d-none');
     }
     else{
-        document.getElementById('show-more').classList.add('d-none')  
+        showMore.classList.add('d-none');  
     }
     tools.forEach(tool => {
         const toolDiv = document.createElement('div');
@@ -61,4 +62,4 @@ const toggleSpinner = isLoading =>{
 }
 
 
-loadAiTools();
+loadAiTools(7);
