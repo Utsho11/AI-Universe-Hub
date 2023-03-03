@@ -12,19 +12,23 @@ const displayAiTools = tools =>{
         toolDiv.classList.add('col');
         toolDiv.innerHTML =`
         <div class="card h-100">
-                        <img src="${tool.image}" class="card-img-top" alt="...">
+                        <img style="height: 180px;" src="${tool.image}" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5>Feature</h5>
-                          <p>${tool.features.forEach(element => {
-                            
-                          })
-                          }</p>
+                          <ol>
+                          <li>${tool.features[0] ? tool.features[0] : "not data"}</li>
+                          <li>${tool.features[1] ? tool.features[1] : "not data"}</li>
+                          <li>${tool.features[2] ? tool.features[2] : "not data"}</li>
+                          <li>${tool.features[3] ? tool.features[3] : "not data"}</li>
+                          </ol>
                         </div>
                         <div class="card-footer">
                           
                           <h5 class="card-title">${tool.name}</h5>
-                          
-                          <p class="card-text"></p>
+                          <div class="d-flex">
+                          <i class="flex-grow-1 fa-solid fa-calendar-days"><span style="font-size: smaller;"> ${tool.published_in}</span></i>
+                          <button class="border-danger rounded-circle bg-danger" style="--bs-bg-opacity: .4"><i class="fa-solid  fa-arrow-right " style="color: crimson;"></i></button>
+                          </div>
                           
                         </div>
                       </div>`;
