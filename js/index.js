@@ -65,7 +65,11 @@ const loadAiDetails = async id =>{
     const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
     const res = await fetch (url);
     const data = await res.json();
-    console.log(data.data);
+    displayAiDetails(data.data);
+}
+
+const displayAiDetails = tool =>{
+    document.getElementById('ai-description').innerText = tool.description ? tool.description : 'no data found';
 }
 
 loadAiTools(6);
