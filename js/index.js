@@ -80,9 +80,10 @@ const displayAiDetails = tool =>{
     document.getElementById('Integration-2').innerText = tool.integrations[1] ? tool.integrations[1] : 'no data found'
     document.getElementById('Integration-3').innerText = tool.integrations[2] ? tool.integrations[2] : 'no data found'
     document.getElementById('image-card').innerHTML = `
-    <img src="${tool.image_link[0]}" class="card-img-top" alt="...">
+    <img style="height: 180px;" src="${tool.image_link[0]}" class="card-img-top" alt="...">
     <h5 class="mt-4 text-center">${tool.input_output_examples[0].input}</h5>
-    <p class="text-center">${tool.input_output_examples[1].input}</p>`
+    <p class="text-center">${tool.input_output_examples[1].input}</p>
+    <p style="position: absolute;top: 10px;right: 10px; height: 25px;width: 150px; background-color: crimson; color: white" class="pb-1 rounded text-center"> ${tool.accuracy.score*100}% accuracy</p>`
 }
 
 loadAiTools(6);
