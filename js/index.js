@@ -36,7 +36,7 @@ const displayAiTools = (tools,limit) =>{
                           <h5 class="card-title">${tool.name}</h5>
                           <div class="d-flex">
                           <i class="flex-grow-1 fa-solid fa-calendar-days" style="font-size: smaller;"><span> ${tool.published_in}</span></i>
-                          <button onclick="loadAiDetails('${tool.id}')" id="btn-detail" class="rounded-circle bg-danger" data-bs-toggle="modal" data-bs-target="#detailModal" style="--bs-bg-opacity: .4"><i class="fa-solid  fa-arrow-right " style="color: crimson;"></i></button>
+                          <button onclick="loadAiDetails('${tool.id}')" id="btn-detail" class=" rounded-circle bg-danger" data-bs-toggle="modal" data-bs-target="#detailModal" style="--bs-bg-opacity: .4"><i class="fa-solid  fa-arrow-right " style="color: crimson;"></i></button>
                           </div>
                           
                         </div>
@@ -73,16 +73,16 @@ const displayAiDetails = tool =>{
     document.getElementById('basic-price').innerText = tool.pricing[0].price ? tool.pricing[0].price : 'free of cost';
     document.getElementById('pro-price').innerText = tool.pricing[1].price ? tool.pricing[1].price : 'free of cost';
     document.getElementById('enterprise-price-detail').innerText = tool.pricing[2].plan ? tool.pricing[2].plan : 'free of cost';
-    document.getElementById('feature-1').innerText = tool.features[1].feature_name
-    document.getElementById('feature-2').innerText = tool.features[2].feature_name
-    document.getElementById('feature-3').innerText = tool.features[3].feature_name
+    document.getElementById('feature-1').innerText = tool.features[1].feature_name ? tool.features[1].feature_name : 'no data found';
+    document.getElementById('feature-2').innerText = tool.features[2].feature_name ? tool.features[2].feature_name : 'no data found';
+    document.getElementById('feature-3').innerText = tool.features[3].feature_name ? tool.features[3].feature_name : 'no data found';
     document.getElementById('Integration-1').innerText = tool.integrations[0] ? tool.integrations[0] : 'no data found'
     document.getElementById('Integration-2').innerText = tool.integrations[1] ? tool.integrations[1] : 'no data found'
     document.getElementById('Integration-3').innerText = tool.integrations[2] ? tool.integrations[2] : 'no data found'
     document.getElementById('image-card').innerHTML = `
     <img style="height: 180px;" src="${tool.image_link[0]}" class="card-img-top" alt="...">
-    <h5 class="mt-4 text-center">${tool.input_output_examples[0].input}</h5>
-    <p class="text-center">${tool.input_output_examples[1].input}</p>
+    <h5 class="mt-4 text-center">${tool.input_output_examples[0].input ? tool.input_output_examples[0].input : 'Can you give any example?'}</h5>
+    <p class="text-center">${tool.input_output_examples[1].input ? tool.input_output_examples[1].input : 'No! Not Yet! Take a break!!!'}</p> 
     <p style="position: absolute;top: 10px;right: 10px; height: 25px;width: 150px; background-color: crimson; color: white" class="pb-1 rounded text-center"> ${tool.accuracy.score*100}% accuracy</p>`
 }
 
