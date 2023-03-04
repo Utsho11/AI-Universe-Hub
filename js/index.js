@@ -70,6 +70,9 @@ const loadAiDetails = async id =>{
 
 const displayAiDetails = tool =>{
     document.getElementById('ai-description').innerText = tool.description ? tool.description : 'no data found';
+    document.getElementById('basic-price').innerText = tool.pricing[0].price ? tool.pricing[0].price : 'no data found';
+    document.getElementById('pro-price').innerText = tool.pricing[1].price ? tool.pricing[1].price : 'no data found';
+    document.getElementById('enterprise-price-detail').innerText = tool.pricing[2].plan ? tool.pricing[2].plan : 'no data found';
 }
 
 loadAiTools(6);
