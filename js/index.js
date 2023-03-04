@@ -70,9 +70,16 @@ const loadAiDetails = async id =>{
 
 const displayAiDetails = tool =>{
     document.getElementById('ai-description').innerText = tool.description ? tool.description : 'no data found';
-    document.getElementById('basic-price').innerText = tool.pricing[0].price ? tool.pricing[0].price : 'no data found';
-    document.getElementById('pro-price').innerText = tool.pricing[1].price ? tool.pricing[1].price : 'no data found';
-    document.getElementById('enterprise-price-detail').innerText = tool.pricing[2].plan ? tool.pricing[2].plan : 'no data found';
+    document.getElementById('basic-price').innerText = tool.pricing[0].price ? tool.pricing[0].price : 'free of cost';
+    document.getElementById('pro-price').innerText = tool.pricing[1].price ? tool.pricing[1].price : 'free of cost';
+    document.getElementById('enterprise-price-detail').innerText = tool.pricing[2].plan ? tool.pricing[2].plan : 'free of cost';
+    document.getElementById('feature-1').innerText = tool.features[1].feature_name
+    document.getElementById('feature-2').innerText = tool.features[2].feature_name
+    document.getElementById('feature-3').innerText = tool.features[3].feature_name
+    document.getElementById('Integration-1').innerText = tool.integrations[0] ? tool.integrations[0] : 'no data found'
+    document.getElementById('Integration-2').innerText = tool.integrations[1] ? tool.integrations[1] : 'no data found'
+    document.getElementById('Integration-3').innerText = tool.integrations[2] ? tool.integrations[2] : 'no data found'
+    document.getElementById('modal-image').innerHTML = tool.image_link[0]
 }
 
 loadAiTools(6);
