@@ -36,7 +36,7 @@ const displayAiTools = (tools,limit) =>{
                           <h5 class="card-title">${tool.name}</h5>
                           <div class="d-flex">
                           <i class="flex-grow-1 fa-solid fa-calendar-days" style="font-size: smaller;"><span> ${tool.published_in}</span></i>
-                          <button onclick="loadAiDetails('${tool.id}')" id="btn-detail" class="border-danger rounded-circle bg-danger" data-bs-toggle="modal" data-bs-target="#detailModal" style="--bs-bg-opacity: .4"><i class="fa-solid  fa-arrow-right " style="color: crimson;"></i></button>
+                          <button onclick="loadAiDetails('${tool.id}')" id="btn-detail" class="rounded-circle bg-danger" data-bs-toggle="modal" data-bs-target="#detailModal" style="--bs-bg-opacity: .4"><i class="fa-solid  fa-arrow-right " style="color: crimson;"></i></button>
                           </div>
                           
                         </div>
