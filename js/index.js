@@ -36,7 +36,7 @@ const displayAiTools = (tools,limit) =>{
                           <h5 class="card-title">${tool.name}</h5>
                           <div class="d-flex">
                           <i class="flex-grow-1 fa-solid fa-calendar-days" style="font-size: smaller;"><span> ${tool.published_in}</span></i>
-                          <button id="btn-detail" class="border-danger rounded-circle bg-danger" data-bs-toggle="modal" data-bs-target="#detailModal" style="--bs-bg-opacity: .4"><i class="fa-solid  fa-arrow-right " style="color: crimson;"></i></button>
+                          <button onclick="loadAiDetails('${tool.id}')" id="btn-detail" class="border-danger rounded-circle bg-danger" data-bs-toggle="modal" data-bs-target="#detailModal" style="--bs-bg-opacity: .4"><i class="fa-solid  fa-arrow-right " style="color: crimson;"></i></button>
                           </div>
                           
                         </div>
@@ -60,12 +60,12 @@ const toggleSpinner = isLoading =>{
         spinSection.classList.add('d-none');
     }
 }
-const loadAiDetails = id =>{
-    url = `https://openapi.programming-hero.com/api/ai/tool/01`;
-    fetch(url)
-    .then(res => res.json())
-    .then(data => console.log(data))
-}
 
+const loadAiDetails = async id =>{
+    const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
+    const res = await fetch (url);
+    const data = await res.json();
+    console.log(data.data);
+}
 
 loadAiTools(6);
