@@ -79,7 +79,10 @@ const displayAiDetails = tool =>{
     document.getElementById('Integration-1').innerText = tool.integrations[0] ? tool.integrations[0] : 'no data found'
     document.getElementById('Integration-2').innerText = tool.integrations[1] ? tool.integrations[1] : 'no data found'
     document.getElementById('Integration-3').innerText = tool.integrations[2] ? tool.integrations[2] : 'no data found'
-    document.getElementById('modal-image').innerHTML = tool.image_link[0]
+    document.getElementById('image-card').innerHTML = `
+    <img src="${tool.image_link[0]}" class="card-img-top" alt="...">
+    <h5 class="mt-4 text-center">${tool.input_output_examples[0].input}</h5>
+    <p class="text-center">${tool.input_output_examples[1].input}</p>`
 }
 
 loadAiTools(6);
